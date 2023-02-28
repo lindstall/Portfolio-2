@@ -1,0 +1,34 @@
+---
+title: "portfolio 2"
+output: html_document
+date: "2023-02-28"
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+
+
+```{r }
+library(readxl)
+PIRUS_Public_May2020 <- read_excel("PIRUS_Public_May2020.xlsx") 
+Warning = FALSE 
+dateWarning = FALSE
+```
+
+```{r}
+PIRUS_Public_May2020 %>% 
+filter(Plot_Target1 != "-88") %>% 
+filter(Plot_Target1 != "-99") %>% 
+count(Plot_Target1) %>%
+  arrange(desc(n))
+```
+The most common targets of terrorists attacks in order are: Private citizens & property, Government (general), Businesses, Police, Military, Religious figures/institutions, Abortion related, Educational institution, Government (diplomatic), Airports & aircraft, Journalists & media, Utilities, Transportation, Other (e.g., ambulances, firefighters), Terrorists/non-state militia, Food or water supply, Telecommunication, Maritime (includes ports and maritime facilities). 
+
+
