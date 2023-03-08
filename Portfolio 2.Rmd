@@ -31,4 +31,43 @@ count(Plot_Target1) %>%
 ```
 The most common targets of terrorists attacks in order are: Private citizens & property, Government (general), Businesses, Police, Military, Religious figures/institutions, Abortion related, Educational institution, Government (diplomatic), Airports & aircraft, Journalists & media, Utilities, Transportation, Other (e.g., ambulances, firefighters), Terrorists/non-state militia, Food or water supply, Telecommunication, Maritime (includes ports and maritime facilities). 
 
+```{r}
+PIRUS_Public_May2020 %>% 
+filter(Internet_Use_Plot != "-88") %>% 
+filter(Internet_Use_Plot != "-99") %>% 
+count(Internet_Use_Plot) %>%
+  arrange(desc(n))
+```
+Slightly more terrorist attacks (55%) DO NOT rely on the internet for communications or logistics while preparing for and undertaking the plot? This includes using the internet to communicate with group members or other extremists, threatening targets, researching the target and tactics, and ordering supplies. Note: this does not include radicalizing through the internet.
 
+```{r}
+PIRUS_Public_May2020 %>% 
+filter(Role_Group != "-88") %>% 
+filter(Role_Group != "-99") %>% 
+count(Role_Group) %>%
+  arrange(desc(n))
+```
+
+Most of those engaged in terrorist attacks were followers (62%), then leaders (30%), and finally loose associates (8%).
+
+
+```{r}
+PIRUS_Public_May2020 %>% 
+filter(Internet_Radicalization != "-88") %>% 
+filter(Internet_Radicalization != "-99") %>% 
+count(Internet_Radicalization) %>%
+  arrange(desc(n))
+```
+
+0 = No known role of the internet in individual’s radicalization
+1 = Internet played a role but was not the primary means of radicalization (e.g. internet resources were used to reaffirm or advance pre-existing radical beliefs)
+2 = Internet was the primary means of radicalization for the individual (e.g. initial exposure to ideology and subsequent radicalization occurred online
+
+```{r}
+PIRUS_Public_May2020 %>% 
+filter(Social_Media_Platform1 != "-88") %>% 
+filter(Social_Media_Platform1 != "-99") %>% 
+count(Social_Media_Platform1) %>%
+  arrange(desc(n))
+```
+Facebook is by far the most used social media platform which played a role in the individual’s radicalization and/or mobilization, followed by Youtube and Twitter.
